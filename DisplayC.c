@@ -182,7 +182,7 @@ void interrupt(uint gpio, uint32_t events)
     // Obtem o tempo atual em microssegundos
     uint32_t current_time = to_us_since_boot(get_absolute_time());
     // Verifica se passou tempo suficiente desde o último evento
-    if (current_time - last_time > 250000) // 250 ms de debouncing
+    if (current_time - last_time > 300000) // 300 ms de debouncing
     {
       bool ligou;
       last_time=current_time;
