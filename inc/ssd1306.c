@@ -53,6 +53,10 @@ void ssd1306_command(ssd1306_t *ssd, uint8_t command) {
 }
 
 void ssd1306_send_data(ssd1306_t *ssd) {
+  static bool ocupado=0; //Tentando corrigir o erro do display
+  if(ocupado == 0)
+  {
+  ocupado=1;
   ssd1306_command(ssd, SET_COL_ADDR);
   ssd1306_command(ssd, 0);
   ssd1306_command(ssd, ssd->width - 1);
@@ -65,7 +69,10 @@ void ssd1306_send_data(ssd1306_t *ssd) {
     ssd->ram_buffer,
     ssd->bufsize,
     false
+    
   );
+ ocupado=0;
+}
 }
 
 void ssd1306_pixel(ssd1306_t *ssd, uint8_t x, uint8_t y, bool value) {

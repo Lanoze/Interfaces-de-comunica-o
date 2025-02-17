@@ -213,7 +213,7 @@ void interrupt(uint gpio, uint32_t events)
       }
       ssd1306_draw_string(&ssd, mensagem, 5, 10);
       ssd1306_rect(&ssd, 3, 3, 122, 58, 1, 0);
-      ssd1306_send_data(&ssd);
+      ssd1306_send_data(&ssd); // Parece que é isso que dá problema no display
       if(alarmes_ativos <= 10)//Limite de 10 alarmes ativos ao mesmo tempo
       {
       alarmes_ativos++;
