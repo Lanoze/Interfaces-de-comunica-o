@@ -8,3 +8,5 @@ O botão A alterna o estado do LED verde
 O botão B alterna o estado do LED azul
 
 Ambos os botões também exibem uma mensagem no monitor serial e no display ao serem pressionados
+
+Vídeo mostrando o funcionamento: https://drive.google.com/file/d/1Ca_2ZukOrCL9v3QbxucPa2xix8HJagLR/view?usp=drive_link
